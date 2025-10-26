@@ -6,15 +6,28 @@ require('dotenv').config();
 
 const app = express();
 const server = http.createServer(app);
+
+// Enhanced CORS configuration for both Express and Socket.io
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "https://mzanzi-shield.vercel.app",
+    "https://*.vercel.app",
+    "https://*.onrender.com",
+    "http://localhost:5000",
+    "https://localhost:3000"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+
 const io = socketIo(server, {
-  cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"]
-  }
+  cors: corsOptions
 });
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Basic route
@@ -24,7 +37,8 @@ app.get('/api/health', (req, res) => {
     message: 'Climate Resilience & Food Security Backend is running',
     timestamp: new Date().toISOString(),
     initiative: 'FNB Climate Resilience Program',
-    version: '2.0.0'
+    version: '2.0.0',
+    cors: 'Enabled for production'
   });
 });
 
@@ -273,6 +287,28 @@ app.get('/api/analytics/food-predictions', (req, res) => {
   res.json(predictions);
 });
 
+// Additional endpoint for CORS testing
+app.options('*', cors(corsOptions)); // Enable pre-flight requests for all routes
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Mzanzi Shield Backend API',
+    version: '2.0.0',
+    status: 'active',
+    endpoints: {
+      health: '/api/health',
+      sensors: '/api/sensors',
+      alerts: '/api/alerts',
+      foodSecurity: '/api/food-security',
+      communities: '/api/food-security/communities',
+      supplyChain: '/api/food-security/supply-chain',
+      analytics: '/api/analytics/food-predictions'
+    },
+    cors: 'Enabled for production deployment'
+  });
+});
+
 // Socket.io for real-time updates with Food Security integration
 io.on('connection', (socket) => {
   console.log('New client connected:', socket.id);
@@ -353,4 +389,5 @@ server.listen(PORT, () => {
   console.log(`   → Communities: http://localhost:${PORT}/api/food-security/communities`);
   console.log(`   → Analytics: http://localhost:${PORT}/api/analytics/food-predictions`);
   console.log(`📡 Socket.io server ready for real-time climate & food security updates`);
+  console.log(`🌐 CORS Enabled for: localhost, Vercel, Render deployments`);
 });
