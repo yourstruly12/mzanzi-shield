@@ -240,7 +240,7 @@ function App() {
                           Climate Resilience & Food Security Platform
                         </Typography>
                         <Typography variant="body2" color="textSecondary">
-                          Powered by FNB - Building resilient communities through innovation
+                          Building resilient communities through innovation
                         </Typography>
                       </div>
                       
@@ -250,11 +250,11 @@ function App() {
                             Emergency Contacts
                           </Typography>
                           <Typography variant="caption" color="textSecondary">
-                            Disaster Management: 0800 123 456
+                            Disaster Management: 0000 000 000
                           </Typography>
                           <br />
                           <Typography variant="caption" color="textSecondary">
-                            Food Security Hotline: 0800 789 012
+                            Food Security Hotline: 0000 000 000
                           </Typography>
                         </div>
                         
@@ -280,7 +280,7 @@ function App() {
                       gap: '10px'
                     }}>
                       <Typography variant="caption" color="textSecondary">
-                        © 2024 FNB Climate Resilience Initiative. Protecting communities, securing futures.
+                        © 2024 Mzanzi Shield - Climate Resilience Initiative. Protecting communities, securing futures.
                       </Typography>
                       <Typography variant="caption" color="textSecondary">
                         Last Updated: {new Date().toLocaleDateString()}

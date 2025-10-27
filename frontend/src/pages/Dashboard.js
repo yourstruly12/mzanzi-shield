@@ -353,10 +353,10 @@ const Dashboard = () => {
         <Box>
           <Typography variant="h4" component="h1" gutterBottom>
             <Agriculture sx={{ mr: 2, verticalAlign: 'bottom' }} />
-            Climate Resilience & Food Security Dashboard
+           Mzanzi Shield
           </Typography>
           <Typography variant="body1" color="textSecondary">
-            Integrated disaster management and food security monitoring for FNB's climate resilience initiative
+            Integrated disaster management and food security monitoring for South African communities
           </Typography>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
