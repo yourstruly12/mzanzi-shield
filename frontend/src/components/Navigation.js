@@ -81,7 +81,7 @@ const Navigation = () => {
               }
             }}
           >
-            Mzanzi Shield
+            Climate Resilience & Food Secu000
           </Typography>
           
           {/* ADD: FNB Partnership Badge */}
