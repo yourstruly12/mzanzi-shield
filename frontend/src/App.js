@@ -237,7 +237,7 @@ function App() {
                           }}
                         >
                           <i className="fas fa-seedling" style={{ color: '#4caf50' }}></i>
-                          Climate Resilience & Food Security Platform
+                          Mzanzi Shield
                         </Typography>
                         <Typography variant="body2" color="textSecondary">
                           Building resilient communities through innovation
