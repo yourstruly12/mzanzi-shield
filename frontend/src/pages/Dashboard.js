@@ -353,7 +353,7 @@ const Dashboard = () => {
         <Box>
           <Typography variant="h4" component="h1" gutterBottom>
             <Agriculture sx={{ mr: 2, verticalAlign: 'bottom' }} />
-          Climate Resilience & Food Security Platform
+          Mzanzi Shield
           </Typography>
           <Typography variant="body1" color="textSecondary">
             Integrated disaster management and food security monitoring for South African communities
