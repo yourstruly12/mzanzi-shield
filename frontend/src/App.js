@@ -280,7 +280,7 @@ function App() {
                       gap: '10px'
                     }}>
                       <Typography variant="caption" color="textSecondary">
-                        © 2024 Mzanzi Shield - Climate Resilience Initiative. Protecting communities, securing futures.
+                        © 2024 Mzanzi Shield - Climate Resilience Initiative. Protecting communities, securing futures
                       </Typography>
                       <Typography variant="caption" color="textSecondary">
                         Last Updated: {new Date().toLocaleDateString()}
